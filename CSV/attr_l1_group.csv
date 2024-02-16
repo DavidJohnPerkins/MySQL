@@ -1,0 +1,9 @@
+l1_group_id,l1_group_abbrev,l1_group_desc
+13,BREASTS,"Breasts, excluding other factors"
+14,PUBES,"Pubes, excluding other factors"
+15,ARSE,"Pubes, excluding other factors"
+16,FACE,"Facial / beauty attributes"
+17,FACEPLUS,"Beauty and physique attributes"
+18,WAISTUP,"Exclude grim-down-south issues"
+19,NOTPUBES,"Everything but pubes"
+20,ALL,"All attributes"

@@ -1,0 +1,141 @@
+l2_id,l1_id,l2_desc,l2_sort_order
+148,15,Brazil,4
+149,14,Afro,1
+1149,15,Thailand,20
+1153,15,Japan,13
+1154,46,Plump Slight Protrusion,2
+1169,15,Colombia,99
+1156,18,Tall-Petite,4
+1157,40,Semi-Pendulous Globe,3
+1158,47,Not Puffy,1
+1159,47,Slightly Puffy,2
+1160,47,Puffy,3
+1161,47,Very Puffy,4
+1162,15,Armenia,2
+1163,15,Greece,11
+1164,15,Poland,16
+1165,15,Venezuela,24
+1166,15,Canada,6
+1167,15,Belgium,3
+1168,15,France,9
+1,13,Blue,1
+2,13,Grey,6
+3,13,Green,5
+4,13,Hazel,7
+5,13,Brown,2
+6,13,Dark Brown,3
+7,13,Pale Blue,8
+8,13,Deep Grey,4
+9,14,Dyed/Coloured,10
+10,14,Bleached Blonde,4
+11,14,White Blonde,15
+12,14,Ash Blonde,2
+13,14,Regular Blonde,14
+14,14,Light Red,12
+15,14,Bright Red,5
+16,14,Copper Red,7
+17,14,Fair,4
+18,14,Brunette,6
+19,14,Dark Brunette,8
+20,14,Black,3
+106,14,Mid Brown,13
+107,14,Deep Grey,4
+21,15,USA,23
+22,15,Russia,17
+23,15,Slovenia,18
+24,15,Czech Republic,8
+25,15,Croatia,7
+26,15,Spain,19
+27,15,Ukraine,21
+28,15,Hungary,12
+29,15,Latvia,14
+30,15,United Kingdom,22
+98,15,Belarus,5
+108,15,Moldova,15
+110,15,Germany,10
+137,15,Not Known,1
+31,16,Flat,4
+32,16,Small,2
+33,16,Medium,3
+34,16,Large,4
+35,16,Oversized,5
+44,18,Extra-Petite,1
+45,18,Petite,1
+46,18,Regular-Petite,3
+47,18,Regular,5
+48,18,Heavy-Regular,6
+49,18,Heavy,5
+50,19,Plain,8
+51,19,Gamine,5
+52,19,Girl-Next-Door,6
+53,19,Cosmetic-led,7
+54,19,Pretty,4
+55,19,Beautiful,3
+56,19,Knockout,2
+57,19,Ten,1
+91,20,Mid Teens,1
+92,20,Late Teens,2
+93,20,Early Twenties,3
+94,20,Mid Twenties,4
+95,20,Late Twenties,5
+58,21,Pale,6
+59,21,Fair,4
+60,21,Freckled,1
+61,21,Mediterranean,2
+62,21,Asian,5
+63,21,Dark,3
+65,22,Plump / Retreating,7
+66,22,Plump / Proud,6
+67,22,Narrow / Retreating,3
+68,22,Narrow / Proud,2
+69,22,Unattractive,8
+96,22,Natural / Proud,4
+97,22,Natural / Retreating,5
+135,22,Flat / Retreating,1
+70,23,Peach,3
+71,23,Slight Lower Sag,5
+72,23,Heavy Lower Sag,6
+73,23,Balanced,1
+75,23,Flat,4
+77,23,Boyish,2
+78,24,Small / Flat,2
+79,24,Petite,1
+80,24,Medium,3
+81,24,Large,4
+82,24,Heavy,5
+83,24,Oversize,6
+84,37,White,7
+85,37,Latino,6
+86,37,Indian Asian,4
+87,37,Japanese,3
+88,37,Chinese,2
+89,37,Afro-Caribbean,1
+90,37,Indonesian,5
+111,40,Nubs,1
+112,40,Conical,2
+113,40,Dome,5
+114,40,Full,6
+115,40,Pendulous,7
+136,40,Semi-Pendulous,4
+116,41,None,1
+117,41,Slight,2
+118,41,Moderate,3
+119,41,Heavy,5
+120,42,Tiny,1
+121,42,Small,2
+122,42,Normal,2
+123,42,Large,4
+124,42,Very Large,5
+125,43,Flat,1
+126,43,Slightly Pert,2
+127,43,Pert,3
+128,43,Very Pert,4
+1170,15,China,99
+132,44,Pale,6
+133,44,Normal,2
+134,44,Dark,3
+143,46,Unsightly,6
+144,46,Noticeable Protrusion,5
+145,46,Slight Protrusion,4
+146,46,No Protrusion,3
+147,46,Plump No Protrusion,1

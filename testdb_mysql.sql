@@ -1,4 +1,4 @@
-
+/*
 CREATE DATABASE TestDB;
 USE TestDB;
 
@@ -85,3 +85,79 @@ CREATE TABLE attribute_level_1
 	PRIMARY KEY (l1_id)
 );
 
+DROP TABLE IF EXISTS attribute_level_1_detail;
+
+CREATE TABLE attribute_level_1_detail
+(
+	l1_det_id		int AUTO_INCREMENT,
+	l1_id			int NOT NULL,
+	scheme_id		int NOT NULL,
+	attr_weight		int NOT NULL,
+	PRIMARY KEY (l1_det_id)
+);
+
+ALTER TABLE attribute_level_1_detail ADD CONSTRAINT FK_attr_level_1_det_attr_level_1 FOREIGN KEY (l1_id) 
+	REFERENCES attribute_level_1 (l1_id) ON DELETE CASCADE;
+
+ALTER TABLE attribute_level_1_detail ADD CONSTRAINT FK_attr_level_1_det_attr_scheme FOREIGN KEY(scheme_id)
+	REFERENCES attribute_scheme (scheme_id) ON DELETE CASCADE;
+
+DROP TABLE IF EXISTS attribute_level_2;
+
+CREATE TABLE attribute_level_2
+(
+	l2_id			int AUTO_INCREMENT,
+	l1_id			int NOT NULL,
+	l2_desc			varchar(50) NULL,
+	l2_sort_order	int NULL,
+	PRIMARY KEY (l2_id)
+);
+
+ALTER TABLE attribute_level_2 ADD CONSTRAINT FK_attr_level_2_attr_level_1 FOREIGN KEY(l1_id)
+REFERENCES attribute_level_1 (l1_id) ON DELETE CASCADE;
+
+DROP  TABLE IF EXISTS attribute_level_2_detail;
+CREATE TABLE attribute_level_2_detail
+(
+	l2_det_id		int AUTO_INCREMENT,
+	l2_id 			int	NOT NULL,
+	scheme_id		int NOT NULL,
+	l2_preference	int NOT NULL,
+	PRIMARY KEY (l2_det_id)
+);
+
+ALTER TABLE attribute_level_2_detail ADD CONSTRAINT FK_attr_level_2_det_attr_level_2 FOREIGN KEY(l2_id)
+	REFERENCES attribute_level_2 (l2_id) ON DELETE CASCADE;
+
+ALTER TABLE attribute_level_2_detail ADD CONSTRAINT FK_attr_level_2_det_attr_scheme FOREIGN KEY(scheme_id)
+	REFERENCES attribute_scheme (scheme_id) ON DELETE CASCADE;
+
+DROP TABLE IF EXISTS attribute_level_1_group;
+CREATE TABLE attribute_level_1_group
+(
+	l1_group_id		int AUTO_INCREMENT,
+	l1_group_abbrev varchar(10) NULL,
+	l1_group_desc 	varchar(50) NULL,
+	PRIMARY KEY (l1_group_id)
+);
+*/
+DROP TABLE IF EXISTS attribute_level_1_group_detail;
+CREATE TABLE attribute_level_1_group_detail
+(
+	l1_group_detail_id	int AUTO_INCREMENT,
+	l1_group_id			int NOT NULL,
+	l1_id				int NOT NULL,
+	PRIMARY KEY (l1_group_detail_id)
+);
+
+CREATE UNIQUE INDEX U_IDX_l1group_l1id ON attribute_level_1_group_detail
+(
+	l1_group_id ASC,
+	l1_id ASC
+);
+
+ALTER TABLE attribute_level_1_group_detail ADD CONSTRAINT FK_l1_group_id_l1_group FOREIGN KEY(l1_group_id)
+	REFERENCES attribute_level_1_group (l1_group_id) ON DELETE CASCADE;
+
+ALTER TABLE attribute_level_1_group_detail ADD CONSTRAINT FK_l1_id_attribute_level_1 FOREIGN KEY(l1_id)
+	REFERENCES attribute_level_1 (l1_id) ON DELETE CASCADE;
