@@ -1,6 +1,6 @@
-/*
-CREATE DATABASE TestDB;
-USE TestDB;
+
+--CREATE DATABASE TestDB;
+--USE TestDB;
 
 DROP TABLE IF EXISTS model;
 
@@ -140,7 +140,7 @@ CREATE TABLE attribute_level_1_group
 	l1_group_desc 	varchar(50) NULL,
 	PRIMARY KEY (l1_group_id)
 );
-*/
+
 DROP TABLE IF EXISTS attribute_level_1_group_detail;
 CREATE TABLE attribute_level_1_group_detail
 (
