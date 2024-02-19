@@ -161,3 +161,53 @@ ALTER TABLE attribute_level_1_group_detail ADD CONSTRAINT FK_l1_group_id_l1_grou
 
 ALTER TABLE attribute_level_1_group_detail ADD CONSTRAINT FK_l1_id_attribute_level_1 FOREIGN KEY(l1_id)
 	REFERENCES attribute_level_1 (l1_id) ON DELETE CASCADE;
+
+
+DROP TABLE IF EXISTS image;
+
+CREATE TABLE image
+(
+	image_id		int AUTO_INCREMENT,
+	image_url		varchar(1000) NOT NULL,
+	is_monochrome	bit NULL,
+	PRIMARY KEY (image_id)
+);
+
+DROP TABLE IF EXISTS image_model;
+
+CREATE TABLE image_model
+(
+	image_model_id 	int AUTO_INCREMENT,
+	image_id		int NOT NULL,
+	model_id		int NOT NULL,
+	reference_image bool NULL DEFAULT 0,
+	thumbnail_image bool NULL DEFAULT 0,
+	PRIMARY KEY (image_model_id)
+);
+
+CREATE UNIQUE INDEX U_IDX_imageid_modelid ON image_model
+(
+	image_id ASC,
+	model_id ASC
+);
+
+ALTER TABLE image_model ADD CONSTRAINT FK_image_model_image FOREIGN KEY(image_id)
+	REFERENCES image (image_id) ON DELETE CASCADE;
+
+ALTER TABLE image_model ADD CONSTRAINT FK_image_model_model FOREIGN KEY(model_id)
+	REFERENCES model (model_id) ON DELETE CASCADE;
+
+DROP TABLE IF EXISTS model_attribute;
+CREATE TABLE model_attribute
+(
+	id				int AUTO_INCREMENT,
+	model_id		int			NOT NULL,
+	attribute_id	int 		NOT NULL,
+	standout_factor	float		NOT NULL DEFAULT (1.0),
+	valid_from		datetime	NOT NULL DEFAULT ('1900-01-01 00:00:00'),
+	valid_to		datetime 	NULL,
+	PRIMARY KEY (id),
+	UNIQUE KEY U_IDX_modelid_attrid (model_id ASC, attribute_id ASC),
+	CONSTRAINT FK_model_attr_attr_l2 FOREIGN KEY(attribute_id) REFERENCES attribute_level_2 (l2_id) ON DELETE CASCADE,
+	CONSTRAINT FK_model_attr_model_id FOREIGN KEY(model_id)	REFERENCES model (model_id) ON DELETE CASCADE
+);

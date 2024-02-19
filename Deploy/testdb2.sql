@@ -5,7 +5,7 @@
 -- Server version	8.3.0
 
 DROP TABLE IF EXISTS `model_attribute`;
-DROP TABLE IF EXISTS `model_flag`;
+DROP TABLE IF EXISTS `image_model`;
 DROP TABLE IF EXISTS `flag`;
 DROP TABLE IF EXISTS `attribute_level_1_group_detail`;
 DROP TABLE IF EXISTS `attribute_level_1_group`;
@@ -443,20 +443,11 @@ CREATE TABLE model_attribute
 	standout_factor	float		NOT NULL DEFAULT (1.0),
 	valid_from		datetime	NOT NULL DEFAULT ('1900-01-01 00:00:00'),
 	valid_to		datetime 	NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	UNIQUE KEY U_IDX_modelid_attrid (model_id ASC, attribute_id ASC),
+	CONSTRAINT FK_model_attr_attr_l2 FOREIGN KEY(attribute_id) REFERENCES attribute_level_2 (l2_id) ON DELETE CASCADE,
+	CONSTRAINT FK_model_attr_model_id FOREIGN KEY(model_id)	REFERENCES model (model_id) ON DELETE CASCADE
 );
-
-CREATE INDEX U_IDX_modelid_attrid ON model_attribute
-(
-	model_id ASC,
-	attribute_id ASC
-);
-
-ALTER TABLE model_attribute ADD CONSTRAINT FK_model_attr_attr_l2 FOREIGN KEY(attribute_id)
-	REFERENCES attribute_level_2 (l2_id) ON DELETE CASCADE;
-
-ALTER TABLE model_attribute ADD CONSTRAINT FK_model_attr_model_id FOREIGN KEY(model_id)
-	REFERENCES model (model_id) ON DELETE CASCADE;
 
 CREATE OR REPLACE VIEW v_attribute_level_1 AS
 
